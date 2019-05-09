@@ -1,0 +1,32 @@
+# A path:
+/site_es5/css/*
+   # Headers for that path:
+   Cache-Control: public, max-age=360000 
+
+/site_es5/fonts/*
+   # Headers for that path:
+   Cache-Control: public, max-age=360000 
+
+/site_es5/images/*
+   # Headers for that path:
+   Cache-Control: public, max-age=360000 
+
+/site_es5/js/*
+   # Headers for that path:
+   Cache-Control: public, max-age=360000 
+
+/site_es6/css/*
+   # Headers for that path:
+   Cache-Control: public, max-age=360000 
+
+/site_es6/fonts/*
+   # Headers for that path:
+   Cache-Control: public, max-age=360000 
+
+/site_es6/images/*
+   # Headers for that path:
+   Cache-Control: public, max-age=360000 
+
+/site_es6/js/*
+   # Headers for that path:
+   Cache-Control: public, max-age=360000 
