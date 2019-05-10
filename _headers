@@ -30,3 +30,19 @@
 /site_es6/js/*
    # Headers for that path:
    Cache-Control: public, max-age=360000 
+
+/site_defer/css/*
+   # Headers for that path:
+   Cache-Control: public, max-age=360000 
+
+/site_defer/fonts/*
+   # Headers for that path:
+   Cache-Control: public, max-age=360000 
+
+/site_defer/images/*
+   # Headers for that path:
+   Cache-Control: public, max-age=360000 
+
+/site_defer/js/*
+   # Headers for that path:
+   Cache-Control: public, max-age=360000 
