@@ -9,9 +9,10 @@ exports.handler = async (event, context) => {
     .then((response) => response.text())
     .then((data) => {
       //const dom = parser.parseFromString(data);
-      const productRegex = /itemID=\"(.*?)\"/gi;
+      const productRegex = /itemID=\"(.*?)\"/mgi;
       const matches = productRegex.exec(data);
-      let html = JSON.stringify(matches);
+      //let html = JSON.stringify(matches);
+      let html = data;
       if (matches.length > 0) {        
         //html = matches.find(match => match.includes(".aspx?storeid="))[0].split("=")[1];
         //html = matches;
