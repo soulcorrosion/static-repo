@@ -14,7 +14,7 @@ exports.handler = async (event, context) => {
       let html = matches[0];
       if (matches.length > 0) {        
         //html = matches.find(match => match.includes(".aspx?storeid="))[0].split("=")[1];
-        html = matches;
+        //html = matches;
       }
 
       /*const products = dom.getElementsByAttribute("itemtype", "http://schema.org/Product") || [];
