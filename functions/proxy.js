@@ -8,14 +8,14 @@ exports.handler = async (event, context) => {
   return fetch(API_ENDPOINT/*, { headers: { Accept: "application/json" } }*/)
     .then((response) => response.text())
     .then((data) => {
-      /*const dom = parser.parseFromString(data);
-      const products = dom.getElementsByAttribute("itemtype", "http://schema.org/Product") || [];
+      const dom = parser.parseFromString(data);
+      /*const products = dom.getElementsByAttribute("itemtype", "http://schema.org/Product") || [];
       let html = '';
       if (products.length > 0) {
         let url = products[0].getAttribute("href");
         html = url;
       }*/
-      const html = 'ola';
+      const html = dom;
       return {
       statusCode: 200,
       body: html
