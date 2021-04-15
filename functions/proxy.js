@@ -22,7 +22,7 @@ exports.handler = async (event, context) => {
         let url = products[0].getAttribute("href");
         html = url;
       }*/
-      const html = dom;
+
       return {
       statusCode: 200,
       body: html
