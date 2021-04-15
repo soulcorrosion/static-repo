@@ -16,7 +16,7 @@
     "url": "https://github.com/soulcorrosion/static-repo/issues"
   },
   "homepage": "https://github.com/soulcorrosion/static-repo#readme",
-  "dependencies": {
-    "node-fecth": "0.0.1-security"
+  "dependencies": {    
+    "node-fetch": "^2.6.1"
   }
 }
