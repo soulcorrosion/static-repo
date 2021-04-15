@@ -9,8 +9,8 @@ exports.handler = async (event, context) => {
     .then((response) => response.text())
     .then((data) => {
       const dom = parser.parseFromString(data);
-      const regex = /itemID=\"(.*?)\"/gi;
-      const matches = myRe.exec(dom);
+      const productRegex = /itemID=\"(.*?)\"/gi;
+      const matches = productRegex.exec(dom);
       let html = '';
       if (matches.length > 0) {
         html = matches[0].split("=").pop();
