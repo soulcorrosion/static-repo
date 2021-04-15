@@ -14,7 +14,7 @@ exports.handler = async (event, context) => {
       //let html = JSON.stringify(matches);
       let html = data;
       if (matches.length > 0) {        
-        //html = matches.find(match => match.includes(".aspx?storeid="))[0].split("=")[1];
+        html = matches.find(match => match[1].includes(".aspx?storeid="))[0].split("=")[1];
         //html = matches;
       }
 
