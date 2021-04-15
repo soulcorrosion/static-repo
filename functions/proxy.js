@@ -9,8 +9,15 @@ exports.handler = async (event, context) => {
     .then((response) => response.text())
     .then((data) => {
       const dom = parser.parseFromString(data);
-      /*const products = dom.getElementsByAttribute("itemtype", "http://schema.org/Product") || [];
+      const regex = /itemID=\"(.*?)\"/gi;
+      const matches = myRe.exec(dom);
       let html = '';
+      if (matches.length > 0) {
+        html = matches[0].split("=").pop();
+      }
+
+      /*const products = dom.getElementsByAttribute("itemtype", "http://schema.org/Product") || [];
+      
       if (products.length > 0) {
         let url = products[0].getAttribute("href");
         html = url;
