@@ -8,9 +8,9 @@ exports.handler = async (event, context) => {
   return fetch(API_ENDPOINT/*, { headers: { Accept: "application/json" } }*/)
     .then((response) => response.text())
     .then((data) => {
-      const dom = parser.parseFromString(data);
+      //const dom = parser.parseFromString(data);
       const productRegex = /itemID=\"(.*?)\"/gi;
-      const matches = productRegex.exec(dom);
+      const matches = productRegex.exec(data);
       let html = '';
       if (matches.length > 0) {
         html = matches[0].split("=").pop();
