@@ -13,7 +13,7 @@ exports.handler = async (event, context) => {
       const matches = productRegex.exec(data);
       let html = '';
       if (matches.length > 0) {
-        html = matches[0].split("=").pop();
+        html = matches[0].split("=")[1];
       }
 
       /*const products = dom.getElementsByAttribute("itemtype", "http://schema.org/Product") || [];
