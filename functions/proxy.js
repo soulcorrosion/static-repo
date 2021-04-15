@@ -12,7 +12,7 @@ exports.handler = async (event, context) => {
       const matches = [...data.matchAll(productRegex)];
       let html = '';
       if (matches.length > 0) {        
-        html = `<a href="https://www.farfetch.com/uk/${matches.find(match => match[1].includes(".aspx?storeid="))[0].split('="')[1]}"Click Me</a>`;
+        html = `<a href="https://www.farfetch.com/uk/${matches.find(match => match[1].includes(".aspx?storeid="))[0].split('="')[1]}">Click Me</a>`;
         
       }
       return {
