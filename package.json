@@ -16,7 +16,8 @@
     "url": "https://github.com/soulcorrosion/static-repo/issues"
   },
   "homepage": "https://github.com/soulcorrosion/static-repo#readme",
-  "dependencies": {    
+  "dependencies": {
+    "dom-parser": "^0.1.6",
     "node-fetch": "^2.6.1"
   }
 }
