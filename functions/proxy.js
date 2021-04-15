@@ -11,7 +11,7 @@ exports.handler = async (event, context) => {
       //const dom = parser.parseFromString(data);
       const productRegex = /itemID=\"(.*?)\"/gi;
       const matches = productRegex.exec(data);
-      let html = matches[0];
+      let html = JSON.stringify(matches);
       if (matches.length > 0) {        
         //html = matches.find(match => match.includes(".aspx?storeid="))[0].split("=")[1];
         //html = matches;
