@@ -1,0 +1,697 @@
+
+
+    <!DOCTYPE html>
+    <html dir="ltr" lang="pt">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"7250f8a068","applicationID":"558417002","transactionName":"bgZXNUMEVxUAUxYKC1dMeDdySnoJD1YLEQlYF1wOX0pwCAVVGg==","queueTime":0,"applicationTime":3527,"agent":"","atts":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true},ajax:{deny_list:["bam.nr-data.net"]},distributed_tracing:{enabled:true}};(window.NREUM||(NREUM={})).loader_config={agentID:"594307014",accountID:"135607",trustKey:"135607",xpid:"VQUCV1ZUGwYFXFVTAAEHVA==",licenseKey:"7250f8a068",applicationID:"558417002"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(31),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,s){try{l?l-=1:o(s||new UncaughtException(t,e,n),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t,e){var n=e?null:c.now();i("err",[t,n])}var i=t("handle"),a=t(32),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,p="nr@seenError";if(!c.disabled){var l=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(14),t(13),"addEventListener"in window&&t(7),c.xhrWrappable&&t(15),d=!0)}s.on("fn-start",function(t,e,n){d&&(l+=1)}),s.on("fn-err",function(t,e,n){d&&!n[p]&&(f(n,p,function(){return!0}),this.thrown=!0,o(n))}),s.on("fn-end",function(){d&&!this.thrown&&l>0&&(l-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})}},{}],3:[function(t,e,n){var r=t("loader");r.disabled||(r.features.ins=!0)},{}],4:[function(t,e,n){function r(){U++,L=g.hash,this[u]=y.now()}function o(){U--,g.hash!==L&&i(0,!0);var t=y.now();this[h]=~~this[h]+t-this[u],this[d]=t}function i(t,e){E.emit("newURL",[""+g,e])}function a(t,e){t.on(e,function(){this[e]=y.now()})}var s="-start",c="-end",f="-body",u="fn"+s,d="fn"+c,p="cb"+s,l="cb"+c,h="jsTime",m="fetch",v="addEventListener",w=window,g=w.location,y=t("loader");if(w[v]&&y.xhrWrappable&&!y.disabled){var x=t(11),b=t(12),E=t(9),R=t(7),O=t(14),T=t(8),S=t(15),P=t(10),M=t("ee"),C=M.get("tracer"),N=t(23);t(17),y.features.spa=!0;var L,U=0;M.on(u,r),b.on(p,r),P.on(p,r),M.on(d,o),b.on(l,o),P.on(l,o),M.buffer([u,d,"xhr-resolved"]),R.buffer([u]),O.buffer(["setTimeout"+c,"clearTimeout"+s,u]),S.buffer([u,"new-xhr","send-xhr"+s]),T.buffer([m+s,m+"-done",m+f+s,m+f+c]),E.buffer(["newURL"]),x.buffer([u]),b.buffer(["propagate",p,l,"executor-err","resolve"+s]),C.buffer([u,"no-"+u]),P.buffer(["new-jsonp","cb-start","jsonp-error","jsonp-end"]),a(T,m+s),a(T,m+"-done"),a(P,"new-jsonp"),a(P,"jsonp-end"),a(P,"cb-start"),E.on("pushState-end",i),E.on("replaceState-end",i),w[v]("hashchange",i,N(!0)),w[v]("load",i,N(!0)),w[v]("popstate",function(){i(0,U>1)},N(!0))}},{}],5:[function(t,e,n){function r(){var t=new PerformanceObserver(function(t,e){var n=t.getEntries();s(v,[n])});try{t.observe({entryTypes:["resource"]})}catch(e){}}function o(t){if(s(v,[window.performance.getEntriesByType(w)]),window.performance["c"+p])try{window.performance[h](m,o,!1)}catch(t){}else try{window.performance[h]("webkit"+m,o,!1)}catch(t){}}function i(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var a=t("ee"),s=t("handle"),c=t(14),f=t(13),u=t(6),d=t(23),p="learResourceTimings",l="addEventListener",h="removeEventListener",m="resourcetimingbufferfull",v="bstResource",w="resource",g="-start",y="-end",x="fn"+g,b="fn"+y,E="bstTimer",R="pushState",O=t("loader");if(!O.disabled){O.features.stn=!0,t(9),"addEventListener"in window&&t(7);var T=NREUM.o.EV;a.on(x,function(t,e){var n=t[0];n instanceof T&&(this.bstStart=O.now())}),a.on(b,function(t,e){var n=t[0];n instanceof T&&s("bst",[n,e,this.bstStart,O.now()])}),c.on(x,function(t,e,n){this.bstStart=O.now(),this.bstType=n}),c.on(b,function(t,e){s(E,[e,this.bstStart,O.now(),this.bstType])}),f.on(x,function(){this.bstStart=O.now()}),f.on(b,function(t,e){s(E,[e,this.bstStart,O.now(),"requestAnimationFrame"])}),a.on(R+g,function(t){this.time=O.now(),this.startPath=location.pathname+location.hash}),a.on(R+y,function(t){s("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),u()?(s(v,[window.performance.getEntriesByType("resource")]),r()):l in window.performance&&(window.performance["c"+p]?window.performance[l](m,o,d(!1)):window.performance[l]("webkit"+m,o,d(!1))),document[l]("scroll",i,d(!1)),document[l]("keypress",i,d(!1)),document[l]("click",i,d(!1))}}},{}],6:[function(t,e,n){e.exports=function(){return"PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver}},{}],7:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),s=t("wrap-function")(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1];if(null!==n&&("function"==typeof n||"object"==typeof n)){var r=c(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?s(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],8:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=i(arguments),e={};o.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var s=r.apply(this,t);return o.emit(n+"start",[t,a],s),s.then(function(t){return o.emit(n+"end",[null,t],s),t},function(t){throw o.emit(n+"end",[t],s),t})})}var o=t("ee").get("fetch"),i=t(32),a=t(31);e.exports=o;var s=window,c="fetch-",f=c+"body-",u=["arrayBuffer","blob","json","text","formData"],d=s.Request,p=s.Response,l=s.fetch,h="prototype",m="nr@context";d&&p&&l&&(a(u,function(t,e){r(d[h],e,f),r(p[h],e,f)}),r(s,"fetch",c),o.on(c+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),o.emit(c+"done",[null,e],n)}else o.emit(c+"done",[t],n)}))},{}],9:[function(t,e,n){var r=t("ee").get("history"),o=t("wrap-function")(r);e.exports=r;var i=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;i&&i.pushState&&i.replaceState&&(a=i),o.inPlace(a,["pushState","replaceState"],"-")},{}],10:[function(t,e,n){function r(t){function e(){f.emit("jsonp-end",[],l),t.removeEventListener("load",e,c(!1)),t.removeEventListener("error",n,c(!1))}function n(){f.emit("jsonp-error",[],l),f.emit("jsonp-end",[],l),t.removeEventListener("load",e,c(!1)),t.removeEventListener("error",n,c(!1))}var r=t&&"string"==typeof t.nodeName&&"script"===t.nodeName.toLowerCase();if(r){var o="function"==typeof t.addEventListener;if(o){var a=i(t.src);if(a){var d=s(a),p="function"==typeof d.parent[d.key];if(p){var l={};u.inPlace(d.parent,[d.key],"cb-",l),t.addEventListener("load",e,c(!1)),t.addEventListener("error",n,c(!1)),f.emit("new-jsonp",[t.src],l)}}}}}function o(){return"addEventListener"in window}function i(t){var e=t.match(d);return e?e[1]:null}function a(t,e){var n=t.match(l),r=n[1],o=n[3];return o?a(o,e[r]):e[r]}function s(t){var e=t.match(p);return e&&e.length>=3?{key:e[2],parent:a(e[1],window)}:{key:t,parent:window}}var c=t(23),f=t("ee").get("jsonp"),u=t("wrap-function")(f);if(e.exports=f,o()){var d=/[?&](?:callback|cb)=([^&#]+)/,p=/(.*)\.([^.]+)/,l=/^(\w+)(\.|$)(.*)$/,h=["appendChild","insertBefore","replaceChild"];Node&&Node.prototype&&Node.prototype.appendChild?u.inPlace(Node.prototype,h,"dom-"):(u.inPlace(HTMLElement.prototype,h,"dom-"),u.inPlace(HTMLHeadElement.prototype,h,"dom-"),u.inPlace(HTMLBodyElement.prototype,h,"dom-")),f.on("dom-start",function(t){r(t[0])})}},{}],11:[function(t,e,n){var r=t("ee").get("mutation"),o=t("wrap-function")(r),i=NREUM.o.MO;e.exports=r,i&&(window.MutationObserver=function(t){return this instanceof i?new i(o(t,"fn-")):i.apply(this,arguments)},MutationObserver.prototype=i.prototype)},{}],12:[function(t,e,n){function r(t){var e=i.context(),n=s(t,"executor-",e,null,!1),r=new f(n);return i.context(r).getCtx=function(){return e},r}var o=t("wrap-function"),i=t("ee").get("promise"),a=t("ee").getOrSetContext,s=o(i),c=t(31),f=NREUM.o.PR;e.exports=i,f&&(window.Promise=r,["all","race"].forEach(function(t){var e=f[t];f[t]=function(n){function r(t){return function(){i.emit("propagate",[null,!o],a,!1,!1),o=o||!t}}var o=!1;c(n,function(e,n){Promise.resolve(n).then(r("all"===t),r(!1))});var a=e.apply(f,arguments),s=f.resolve(a);return s}}),["resolve","reject"].forEach(function(t){var e=f[t];f[t]=function(t){var n=e.apply(f,arguments);return t!==n&&i.emit("propagate",[t,!0],n,!1,!1),n}}),f.prototype["catch"]=function(t){return this.then(null,t)},f.prototype=Object.create(f.prototype,{constructor:{value:r}}),c(Object.getOwnPropertyNames(f),function(t,e){try{r[e]=f[e]}catch(n){}}),o.wrapInPlace(f.prototype,"then",function(t){return function(){var e=this,n=o.argsToArray.apply(this,arguments),r=a(e);r.promise=e,n[0]=s(n[0],"cb-",r,null,!1),n[1]=s(n[1],"cb-",r,null,!1);var c=t.apply(this,n);return r.nextPromise=c,i.emit("propagate",[e,!0],c,!1,!1),c}}),i.on("executor-start",function(t){t[0]=s(t[0],"resolve-",this,null,!1),t[1]=s(t[1],"resolve-",this,null,!1)}),i.on("executor-err",function(t,e,n){t[1](n)}),i.on("cb-end",function(t,e,n){i.emit("propagate",[n,!0],this.nextPromise,!1,!1)}),i.on("propagate",function(t,e,n){this.getCtx&&!e||(this.getCtx=function(){if(t instanceof Promise)var e=i.context(t);return e&&e.getCtx?e.getCtx():this})}),r.toString=function(){return""+f})},{}],13:[function(t,e,n){var r=t("ee").get("raf"),o=t("wrap-function")(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],14:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t("wrap-function")(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],15:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){x.push(t),m&&(E?E.then(a):w?w(a):(R=-R,O.data=R))}function a(){for(var t=0;t<x.length;t++)r([],x[t]);x.length&&(x=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(7);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),p=t(23),l=NREUM.o,h=l.XHR,m=l.MO,v=l.PR,w=l.SI,g="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],x=[];e.exports=u;var b=window.XMLHttpRequest=function(t){var e=new h(t);try{u.emit("new-xhr",[e],e),e.addEventListener(g,o,p(!1))}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(h,b),b.prototype=h.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),m){var E=v&&v.resolve();if(!w&&!v){var R=1,O=document.createTextNode(R);new m(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===g||a()})},{}],16:[function(t,e,n){function r(t){if(!s(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=l.generateSpanId(),m=l.generateTraceId(),v=Date.now(),w={spanId:h,traceId:m,timestamp:v};return(t.sameOrigin||c(t)&&p())&&(w.traceContextParentHeader=o(h,m),w.traceContextStateHeader=i(h,v,n,r,f)),(t.sameOrigin&&!u()||!t.sameOrigin&&c(t)&&d())&&(w.newrelicHeader=a(h,m,v,n,r,f)),w}function o(t,e){return"00-"+e+"-"+t+"-01"}function i(t,e,n,r,o){var i=0,a="",s=1,c="",f="";return o+"@nr="+i+"-"+s+"-"+n+"-"+r+"-"+t+"-"+a+"-"+c+"-"+f+"-"+e}function a(t,e,n,r,o,i){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var s={v:[0,1],d:{ty:"Browser",ac:r,ap:o,id:t,tr:e,ti:n}};return i&&r!==i&&(s.d.tk=i),btoa(JSON.stringify(s))}function s(t){return f()&&c(t)}function c(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var o=h(n.allowed_origins[r]);if(t.hostname===o.hostname&&t.protocol===o.protocol&&t.port===o.port){e=!0;break}}return e}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function p(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var l=t(28),h=t(18);e.exports={generateTracePayload:r,shouldGenerateTrace:s}},{}],17:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<p;r++)t.removeEventListener(d[r],this.listener,!1);return e.protocol&&"data"===e.protocol?void g("Ajax/DataUrl/Excluded"):void(e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):i(this,t),n.cbTime=this.cbTime,s("xhr",[e,n,this.startTime,this.endTime,"xhr"],this)))}}function o(t,e){var n=c(e),r=t.params;r.hostname=n.hostname,r.port=n.port,r.protocol=n.protocol,r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=n,t.sameOrigin=n.sameOrigin}function i(t,e){t.params.status=e.status;var n=v(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable&&!a.disabled){var s=t("handle"),c=t(18),f=t(16).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],p=d.length,l=t("id"),h=t(24),m=t(22),v=t(19),w=t(23),g=t(25).recordSupportability,y=NREUM.o.REQ,x=window.XMLHttpRequest;a.features.xhr=!0,t(15),t(8),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,e.params=this.params||{},e.metrics=this.metrics||{},t.addEventListener("load",function(n){i(e,t)},w(!1)),h&&(h>34||h<10)||t.addEventListener("progress",function(t){e.lastSize=t.loaded},w(!1))}),u.on("open-xhr-start",function(t){this.params={method:t[0]},o(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=m(r);i&&(n.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||o.loadCaptureCalled||(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var s=0;s<p;s++)e.addEventListener(d[s],this.listener,w(!1))}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("xhr-resolved",function(){this.endTime=a.now()}),u.on("addEventListener-end",function(t,e){e instanceof x&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof x&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof x&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url?n=t[0].url:window.URL&&t[0]&&t[0]instanceof URL&&(n=t[0].href),n&&(this.parsedOrigin=c(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var o=f(this.parsedOrigin);if(o&&(o.newrelicHeader||o.traceContextParentHeader))if("string"==typeof t[0]||window.URL&&t[0]&&t[0]instanceof URL){var i={};for(var a in r)i[a]=r[a];i.headers=new Headers(r.headers||{}),e(i.headers,o)&&(this.dt=o),t.length>1?t[1]=i:t.push(i)}else t[0]&&t[0].headers&&e(t[0].headers,o)&&(this.dt=o)}),u.on("fetch-start",function(t,e){this.params={},this.metrics={},this.startTime=a.now(),this.dt=e,t.length>=1&&(this.target=t[0]),t.length>=2&&(this.opts=t[1]);var n,r=this.opts||{},i=this.target;if("string"==typeof i?n=i:"object"==typeof i&&i instanceof y?n=i.url:window.URL&&"object"==typeof i&&i instanceof URL&&(n=i.href),o(this,n),"data"!==this.params.protocol){var s=(""+(i&&i instanceof y&&i.method||r.method||"GET")).toUpperCase();this.params.method=s,this.txSize=m(r.body)||0}}),u.on("fetch-done",function(t,e){if(this.endTime=a.now(),this.params||(this.params={}),"data"===this.params.protocol)return void g("Ajax/DataUrl/Excluded");this.params.status=e?e.status:0;var n;"string"==typeof this.rxSize&&this.rxSize.length>0&&(n=+this.rxSize);var r={txSize:this.txSize,rxSize:n,duration:a.now()-this.startTime};s("xhr",[this.params,r,this.startTime,this.endTime,"fetch"],this)})}},{}],18:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];if(0===(t||"").indexOf("data:"))return{protocol:"data"};var e=document.createElement("a"),n=window.location,o={};e.href=t,o.port=e.port;var i=e.href.split("://");!o.port&&i[1]&&(o.port=i[1].split("/")[0].split("@").pop().split(":")[1]),o.port&&"0"!==o.port||(o.port="https"===i[0]?"443":"80"),o.hostname=e.hostname||n.hostname,o.pathname=e.pathname,o.protocol=i[0],"/"!==o.pathname.charAt(0)&&(o.pathname="/"+o.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,s=e.hostname===document.domain&&e.port===n.port;return o.sameOrigin=a&&(!e.hostname||s),"/"===o.pathname&&(r[t]=o),o}},{}],19:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?o(t.response):"text"===n||""===n||void 0===n?o(t.responseText):void 0}var o=t(22);e.exports=r},{}],20:[function(t,e,n){function r(){}function o(t,e,n,r){return function(){return u.recordSupportability("API/"+e+"/called"),i(t+e,[f.now()].concat(s(arguments)),n?null:this,r),n?void 0:this}}var i=t("handle"),a=t(31),s=t(32),c=t("ee").get("tracer"),f=t("loader"),u=t(25),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",h=l+"ixn-";a(p,function(t,e){d[e]=o(l,e,!0,"api")}),d.addPageAction=o(l,"addPageAction",!0),d.setCurrentRouteName=o(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(h+"tracer",[f.now(),t,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=o(h,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),u.recordSupportability("API/noticeError/called"),i("err",[t,f.now(),!1,e])}},{}],21:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],22:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],23:[function(t,e,n){var r=!1;try{var o=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,o),window.removeEventListener("testPassive",null,o)}catch(i){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],24:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],25:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return i("storeMetric",n,null,"api"),n}function o(t,e){var n=[s,t,{name:t},e];return i("storeEventMetrics",n,null,"api"),n}var i=t("handle"),a="sm",s="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:s},recordSupportability:r,recordCustom:o}},{}],26:[function(t,e,n){function r(){return s.exists&&performance.now?Math.round(performance.now()):(i=Math.max((new Date).getTime(),i))-a}function o(){return i}var i=(new Date).getTime(),a=i,s=t(33);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=o},{}],27:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function o(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(f&&f<r.startTime)return;var o=[r],i=a({});i&&o.push(i),l("lcp",o)}}function i(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function s(t){if(t instanceof w&&!y){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=h.now()?n.fid=h.now()-e:e>h.offset&&e<=Date.now()?(e-=h.offset,n.fid=h.now()-e):e=h.now(),y=!0,l("timing",["fi",e,n])}}function c(t){"hidden"===t&&(f=h.now(),l("pageHide",[f]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,d,p,l=t("handle"),h=t("loader"),m=t(30),v=t(23),w=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){u=new PerformanceObserver(r);try{u.observe({entryTypes:["paint"]})}catch(g){}d=new PerformanceObserver(o);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(g){}p=new PerformanceObserver(i);try{p.observe({type:"layout-shift",buffered:!0})}catch(g){}}if("addEventListener"in document){var y=!1,x=["click","keydown","mousedown","pointerdown","touchstart"];x.forEach(function(t){document.addEventListener(t,s,v(!1))})}m(c)}},{}],28:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var o,i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",s=0;s<i.length;s++)o=i[s],"x"===o?a+=t().toString(16):"y"===o?(o=3&t()|8,a+=o.toString(16)):a+=o;return a}function o(){return a(16)}function i(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,o=window.crypto||window.msCrypto;o&&o.getRandomValues&&Uint8Array&&(n=o.getRandomValues(new Uint8Array(t)));for(var i=[],a=0;a<t;a++)i.push(e().toString(16));return i.join("")}e.exports={generateUuid:r,generateSpanId:o,generateTraceId:i}},{}],29:[function(t,e,n){function r(t,e){if(!o)return!1;if(t!==o)return!1;if(!e)return!0;if(!i)return!1;for(var n=i.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}e.exports={agent:o,version:i,match:r}},{}],30:[function(t,e,n){function r(t){function e(){t(s&&document[s]?document[s]:document[i]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,o(!1))}var o=t(23);e.exports=r;var i,a,s;"undefined"!=typeof document.hidden?(i="hidden",a="visibilitychange",s="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",a="webkitvisibilitychange",s="webkitVisibilityState")},{}],31:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],32:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],33:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?f(t,c,a):a()}function n(n,r,o,i,a){if(a!==!1&&(a=!0),!l.aborted||i){t&&a&&t(n,r,o);for(var s=e(o),c=m(n),f=c.length,u=0;u<f;u++)c[u].apply(s,r);var p=d[y[n]];return p&&p.push([x,n,r,s]),s}}function i(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function v(t){return p[t]=p[t]||o(n)}function w(t,e){l.aborted||u(t,function(t,n){e=e||"feature",y[n]=e,e in d||(d[e]=[])})}var g={},y={},x={on:i,addEventListener:i,removeEventListener:h,emit:n,get:v,listeners:m,context:e,buffer:w,abort:s,aborted:!1};return x}function i(t){return f(t,c,a)}function a(){return new r}function s(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",f=t("gos"),u=t(31),d={},p={},l=e.exports=o();e.exports.getOrSetContext=i,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!T++){var t=O.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();s("mark",["onload",n+O.offset],null,"api"),s("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function o(){"complete"===m.readyState&&i()}function i(){s("mark",["domContent",a()+O.offset],null,"api")}var a=t(26),s=t("handle"),c=t(31),f=t("ee"),u=t(29),d=t(21),p=t(23),l=d.getConfiguration("ssl")===!1?"http":"https",h=window,m=h.document,v="addEventListener",w="attachEvent",g=h.XMLHttpRequest,y=g&&g.prototype,x=!1;NREUM.o={ST:setTimeout,SI:h.setImmediate,CT:clearTimeout,XHR:g,REQ:h.Request,EV:h.Event,PR:h.Promise,MO:h.MutationObserver};var b=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-spa-1216.min.js"},R=g&&y&&y[v]&&!/CriOS/.test(navigator.userAgent),O=e.exports={offset:a.getLastTimestamp(),now:a,origin:b,features:{},xhrWrappable:R,userAgent:u,disabled:x};if(!x){t(20),t(27),m[v]?(m[v]("DOMContentLoaded",i,p(!1)),h[v]("load",r,p(!1))):(m[w]("onreadystatechange",o),h[w]("onload",r)),s("mark",["firstbyte",a.getLastTimestamp()],null,"api");var T=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,f){function nrWrapper(){var i,a,u,p;try{a=this,i=d(arguments),u="function"==typeof r?r(i,a):r||{}}catch(l){o([l,"",[i,a,c],u],t)}s(n+"start",[i,a,c],u,f);try{return p=e.apply(a,i)}catch(h){throw s(n+"err",[i,a,h],u,f),h}finally{s(n+"end",[i,a,p],u,f)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,i(e,nrWrapper,t),nrWrapper)}function r(t,e,r,o,i){r||(r="");var s,c,f,u="-"===r.charAt(0);for(f=0;f<e.length;f++)c=e[f],s=t[c],a(s)||(t[c]=n(s,u?c+r:r,o,c,i))}function s(n,r,i,a){if(!h||e){var s=h;h=!0;try{t.emit(n,r,i,e,a)}catch(c){o([c,n,r,i],t)}h=s}}return t||(t=u),n.inPlace=r,n.flag=p,n}function o(t,e){e||(e=u);try{e.emit("internal-error",t)}catch(n){}}function i(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(i){o([i],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function s(t,e){var n=e(t);return n[p]=t,i(t,n,u),n}function c(t,e,n){var r=t[e];t[e]=s(r,n)}function f(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var u=t("ee"),d=t(32),p="nr@original",l=Object.prototype.hasOwnProperty,h=!1;e.exports=r,e.exports.wrapFunction=s,e.exports.wrapInPlace=c,e.exports.argsToArray=f},{}]},{},["loader",2,17,5,3,4]);</script>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="format-detection" content="telephone=no" />
+
+
+        <title>
+            farfetch.com - a new way to shop for fashion
+        </title>
+
+        
+    <link href="https://cdn-static.farfetch-contents.com/assets/portal-checkout-web/v2-0-22195-405/Static/assets/images/favicon/Farfetch/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" />
+    <link href="https://cdn-static.farfetch-contents.com/assets/portal-checkout-web/v2-0-22195-405/Static/assets/images/favicon/Farfetch/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" />
+    <link href="https://cdn-static.farfetch-contents.com/assets/portal-checkout-web/v2-0-22195-405/Static/assets/images/favicon/Farfetch/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" />
+    <link href="https://cdn-static.farfetch-contents.com/assets/portal-checkout-web/v2-0-22195-405/Static/assets/images/favicon/Farfetch/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" />
+    <link href="https://cdn-static.farfetch-contents.com/assets/portal-checkout-web/v2-0-22195-405/Static/assets/images/favicon/Farfetch/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" />
+    <link href="https://cdn-static.farfetch-contents.com/assets/portal-checkout-web/v2-0-22195-405/Static/assets/images/favicon/Farfetch/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
+    <link href="https://cdn-static.farfetch-contents.com/assets/portal-checkout-web/v2-0-22195-405/Static/assets/images/favicon/Farfetch/favicon_b.ico" rel="shortcut icon" />
+
+
+
+<meta name="msapplication-TileColor" content="#da532c" />
+<meta name="msapplication-TileImage" content="/Static/assets/images/favicon/Farfetch/mstile-144x144.png" />
+<meta name="theme-color" content="#ffffff">
+
+
+        <link href="https://cdn-static.farfetch-contents.com/assets/portal-checkout-web/v2-0-22195-405/Static/dist/css/essentials.min.css" rel="stylesheet" type="text/css" />
+
+        <link href="https://cdn-static.farfetch-contents.com/cdn-content/fonts/rebrandedTypography.min.css" rel="stylesheet">
+
+<link href="https://cdn-static.farfetch-contents.com/assets/portal-checkout-web/v2-0-22195-405/Static/dist/css/iconglyphs.min.css" onload="if(media!=&#x27;all&#x27;)media=&#x27;all&#x27;" rel="stylesheet" />
+        
+    <link href="https://cdn-static.farfetch-contents.com/assets/portal-checkout-web/v2-0-22195-405/Static/dist/css/confirmation.min.css" rel="stylesheet" type="text/css" />
+
+
+
+        <script type="text/javascript">
+        window.config = {
+            subPathCdn : 'assets/portal-checkout-web/v2-0-22195-405',
+            useMinified : true,
+            buildVersion: 'v2-0-22195-405',
+            mockPublicApi: false,
+            urlCdn: 'https://cdn-static.farfetch-contents.com',
+            googleMapsKey: "AIzaSyD7wQjeBr8_okyGEQ16kmxGsdva8vwC9gc",
+            isSandbox: "True" === "False"
+        };
+        </script>
+
+        <script data-main="https://cdn-static.farfetch-contents.com/assets/portal-checkout-web/v2-0-22195-405/Static/dist/js/main.js" src="https://cdn-static.farfetch-contents.com/assets/portal-checkout-web/v2-0-22195-405/Static/dist/js/requirejs.js"></script>
+
+
+<script src="https://cdn-static.farfetch-contents.com/assets/portal-checkout-web/v2-0-22195-405/Static/dist/js/castle.js"></script>
+
+<script type="text/javascript">
+    _castle('setAppId', '994951769153581');
+
+    document.addEventListener('universal_variable.user', function () {
+        universal_variable.user.isLogged &&
+            _castle('identify', universal_variable.user.userId.toString(), {
+                email: universal_variable.user.email,
+                name: universal_variable.user.name
+            });
+    });
+</script>
+
+
+<script type="text/javascript">
+    window.universal_variable = window.universal_variable || {};
+</script>
+<script type="text/javascript">
+        window.universal_variable.page = {"type":"checkout","subType":null,"pageId":"transaction","environment":"live","currencyCode":"BRL","mentionMe":true,"partnercode":"mm9920d1eb","subfolder":"/br","locale":"pt_BR","cookieDomainName":"farfetch.com","experiences":[],"marketingApiUrl":"https://ot.farfetch.com/ext/marketing/v1/trackings","uniquePageIdentifier":"580121e8-b702-472c-8ad5-edebaf303d4a","flatShipRate":"0","contextGenderId":0,"buildVersion":"1.0.0","pageStep":"Confirmation"};
+</script>
+<script type="text/javascript">
+        window.universal_variable.user = {"geoCountryCode":"PT","name":"teste","email":"teste@farfetch.com","hashedEmail":"e9efe4d48da3f40b494f5102f5397914","returning":true,"hasTransacted":true,"language":"pt","countryId":28,"countryCode":"BR","geoCountryId":165,"geoSubfolder":"/pt","userSubfolder":"/br","userId":45417437,"isLogged":true,"ip":"46.189.200.120","isBot":false,"cookieId":"myaccount-test-test-test-0000newpage","sessionId":"5501dc3d-d89e-8daf-1021-7984db30fa7e","basketId":"4dd0a47f-4b4e-4643-b64b-a2369037793d","checkoutType":30,"segments":[{"Code":"Farfetch"},{"Code":"streetlovers"},{"Code":"ffaccess-demoted"},{"Code":"churn-oct20"},{"Code":"vday-15"},{"Code":"rank-12"},{"Code":"access-birthday-test-3"},{"Code":"loyal"},{"Code":"FFACCESS-Platinum"},{"Code":"assisted-edits-dag-acceptance-test-segment-15"}],"benefits":[{"Code":"transactional-comms-pc"},{"Code":"product-tag-beat"},{"Code":"product-tag-soft-launch"},{"Code":"product-tag-vipapponly"},{"Code":"ffaccess"},{"Code":"platinum-access"},{"Code":"extended-returns"},{"Code":"restricted-brands"},{"Code":"access-demoted"},{"Code":"rank-12"},{"Code":"no-op"},{"Code":"vip-private-sale"}],"firstName":"2c9a1c95814f31bb8459a7f7fc3536e73354699bace060e0876966878e1d1548","lastName":"0df2b318462f5a520d9afa4cc3de851e08302a52ebf0b9789a13132f34e2ab3a","gender":"Male","genderId":1,"birthDate":"5a3dd321f10b092149d54590081b70402155a6f88594df62d1583ba28e0140fd","city":"577abdbf90dadd651458eee7576c6e3684b5c27beabd465cc4bb3c42441b5b38","stateCode":"f5aeb0b6798a7470cf56920ff59e499d0e5e8d0eda7049b533a97c5f31c93e8b","zipCode":"1064d42109da2774551ebf7024dea9cc07d7f39e1dfd9ab847a380a6dd64359a","hashedSHA256Email":"7281e7d0bda7e367274d406c2ad3091f4a0558543031c9f3a268eb0a1909f9a6","wishListQuantity":0,"bct":null,"accessTier":null,"isMobile":false};
+
+        if (window.universal_variable.user) {
+            var event = document.createEvent('Event');
+            event.initEvent('universal_variable.user', true, true);
+            document.dispatchEvent(event);
+        }
+</script>
+<script type="text/javascript">
+        window.universal_variable.transaction = {"orderCode":"SX2DGT","orderId":"187980048","stores":"PACE BR","delivery":{"address":"Avenida  Paulista 1 ","city":"São Paulo","state":"São Paulo","postcode":"01310-200","country":"Brasil"},"billing":{"address":"Avenida  Paulista 1 ","city":"São Paulo","state":"São Paulo","postcode":"01310-200","country":"Brasil"},"subTotalIncludeTax":true,"subTotal":70.0,"subTotalExchange":{"GBP":10.90,"AUD":19.11,"USD":12.90,"EUR":12.83,"JPY":1789.44},"total":49.71,"totalExchange":{"GBP":7.74,"AUD":13.57,"USD":9.16,"EUR":9.11,"JPY":1270.76},"tax":0.0,"taxGbp":0.00,"shippingCost":24.99,"shippingCostGbp":3.89,"discount":0.0,"discountExchange":{"GBP":0.00,"AUD":0.00,"USD":0.00,"EUR":0.00,"JPY":0.00},"orderLang":"pt-BR","orderDate":"07/18/2022","lineItems":[{"product":{"unitPriceExchange":{"GBP":10.90,"AUD":19.11,"USD":12.90,"EUR":12.83,"JPY":1789.44},"unitBasePriceExchange":{"GBP":10.90,"AUD":19.11,"USD":12.90,"EUR":12.83,"JPY":1789.44},"unitSalePriceExchange":{"GBP":10.90,"AUD":19.11,"USD":12.90,"EUR":12.83,"JPY":1789.44},"useOnFitPredictor":false,"id":17801267,"storeId":13010,"isLastOneLeft":false,"isLocalOrigin":false,"name":"Par de meias Hanko com bordado","designerName":"PACE","designerId":13502729,"categories":[{"id":"141258","name":"Mulher","subCategories":[{"id":"136071","name":"Lingerie \u0026 Nightwear","subCategories":[{"id":"136290","name":"Meias","subCategories":[]}]}]}],"categoryId":141259,"category":"Homem","subCategoryId":136071,"subCategory":"Lingerie \u0026 Nightwear","selectedSize":17,"selectedRealSize":"Tamanho único","sizeDescription":"Tamanho único","unitPrice":70.0,"unitSalePrice":70.0,"unitBasePrice":70.0,"currencyCode":"BRL","imageUrl":"https://cdn-images.farfetch-contents.com/17/80/12/67/17801267_38049623_190.jpg","url":"/br/shopping/woman/sale/pace-par-de-meias-hanko-com-bordado-item-17801267.aspx?storeid=13010","hasStock":true,"stock":2,"department":"Luxe","scaleAbbreviation":"","designerStyleId":"PACE07AJ","merchandisingLabel":"NoTag","hasSimilarProducts":false,"outfitId":0,"priceTags":["VAT"],"isNonReturnable":false},"quantity":1,"subTotal":70.0,"origin":28,"originCode":"BR","shippingOptions":[]}],"itemsQuantity":1};
+</script>
+<script type="text/javascript">
+        window.universal_variable.events = [];
+</script>
+
+
+
+
+<!-- Google Tag Manager -->
+    <script>
+    document.addEventListener('pageloaded', function () {
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.defer=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl+'';f.parentNode.insertBefore(j,f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5VWCDN');
+    });
+    </script>
+<!-- End Google Tag Manager -->
+            <script src="https://cdn-static.farfetch-contents.com/assets/omni-library/omni-library-stable.min.js" async></script>
+
+   <!-- Pebble integration -->
+   <script>
+	window._pp = window._pp || [];
+	_pp.brid = "2734";
+	_pp.brcid = "";
+	_pp.sessionId = "";
+	_pp.email = "";
+	_pp.orderValue = "";
+	_pp.orderId = "";
+	_pp.offerCode = "";
+	(function() {
+		var ppjs = document.createElement('script');
+		ppjs.type = 'text/javascript';
+		ppjs.async = true;
+		ppjs.src = ('https:' == document.location.protocol ? 'https:' :'http:') +'//cdn.pbbl.co/r/' + _pp.brid + '.js';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(ppjs, s);
+	})();
+</script>
+
+<script type='text/javascript'>
+    window.__track__=function(n){if("string"==typeof n&&window.Omnitracking&&"function"==typeof Omnitracking.track){var t=JSON.parse(n);if(Object.keys(t).length>0){if(!t.fp&&window.performance&&"function"==typeof performance.getEntriesByType&&performance.getEntriesByType("paint")instanceof Array&&2===performance.getEntriesByType("paint").length){var e=performance.getEntriesByType("paint").find(function(n){return"first-paint"===n.name}),r=performance.getEntriesByType("paint").find(function(n){return"first-contentful-paint"===n.name});e&&(t.fp=Math.round(e.startTime),t.fcp=Math.round(r.startTime))}t=JSON.stringify({tti:t.tti,fid:t.fid,fp:t.fp,fcp:t.fcp,vc:t.vct,top:t.tp,et:t.et,fet:t.fet}),Omnitracking.track({tid:1217,val:t})}}},window.__longTasksTracker__={track:function(){if(window.PerformanceObserver){new window.PerformanceObserver(function(n){this.longTasks=this.longTasks.concat(n.getEntries())}.bind(this)).observe({entryTypes:["longtask"]})}},longTasks:[]},window.__longTasksTracker__.track();
+</script>
+<script type='text/javascript'>
+ (function(){var h="undefined"!=typeof window&&window===this?this:"undefined"!=typeof global&&null!=global?global:this,k="function"==typeof Object.defineProperties?Object.defineProperty:function(a,b,c){a!=Array.prototype&&a!=Object.prototype&&(a[b]=c.value)};function l(){l=function(){};h.Symbol||(h.Symbol=m)}var n=0;function m(a){return"jscomp_symbol_"+(a||"")+n++}
+function p(){l();var a=h.Symbol.iterator;a||(a=h.Symbol.iterator=h.Symbol("iterator"));"function"!=typeof Array.prototype[a]&&k(Array.prototype,a,{configurable:!0,writable:!0,value:function(){return q(this)}});p=function(){}}function q(a){var b=0;return r(function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}})}function r(a){p();a={next:a};a[h.Symbol.iterator]=function(){return this};return a}function t(a){p();var b=a[Symbol.iterator];return b?b.call(a):q(a)}
+function u(a){if(!(a instanceof Array)){a=t(a);for(var b,c=[];!(b=a.next()).done;)c.push(b.value);a=c}return a}var v=0;function w(a,b){var c=XMLHttpRequest.prototype.send,d=v++;XMLHttpRequest.prototype.send=function(f){for(var e=[],g=0;g<arguments.length;++g)e[g-0]=arguments[g];var E=this;a(d);this.addEventListener("readystatechange",function(){4===E.readyState&&b(d)});return c.apply(this,e)}}
+function x(a,b){var c=fetch;fetch=function(d){for(var f=[],e=0;e<arguments.length;++e)f[e-0]=arguments[e];return new Promise(function(d,e){var g=v++;a(g);c.apply(null,[].concat(u(f))).then(function(a){b(g);d(a)},function(a){b(a);e(a)})})}}var y="img script iframe link audio video source".split(" ");function z(a,b){a=t(a);for(var c=a.next();!c.done;c=a.next())if(c=c.value,b.includes(c.nodeName.toLowerCase())||z(c.children,b))return!0;return!1}
+function A(a){var b=new MutationObserver(function(c){c=t(c);for(var b=c.next();!b.done;b=c.next())b=b.value,"childList"==b.type&&z(b.addedNodes,y)?a(b):"attributes"==b.type&&y.includes(b.target.tagName.toLowerCase())&&a(b)});b.observe(document,{attributes:!0,childList:!0,subtree:!0,attributeFilter:["href","src"]});return b}
+function B(a,b){if(2<a.length)return performance.now();var c=[];b=t(b);for(var d=b.next();!d.done;d=b.next())d=d.value,c.push({timestamp:d.start,type:"requestStart"}),c.push({timestamp:d.end,type:"requestEnd"});b=t(a);for(d=b.next();!d.done;d=b.next())c.push({timestamp:d.value,type:"requestStart"});c.sort(function(a,b){return a.timestamp-b.timestamp});a=a.length;for(b=c.length-1;0<=b;b--)switch(d=c[b],d.type){case "requestStart":a--;break;case "requestEnd":a++;if(2<a)return d.timestamp;break;default:throw Error("Internal Error: This should never happen");
+}return 0}function C(a){a=a?a:{};this.w=!!a.useMutationObserver;this.u=a.minValue||null;a=window.__tti&&window.__tti.e;var b=window.__tti&&window.__tti.o;this.a=a?a.map(function(a){return{start:a.startTime,end:a.startTime+a.duration}}):[];b&&b.disconnect();this.b=[];this.f=new Map;this.j=null;this.v=-Infinity;this.i=!1;this.h=this.c=this.s=null;w(this.m.bind(this),this.l.bind(this));x(this.m.bind(this),this.l.bind(this));D(this);this.w&&(this.h=A(this.B.bind(this)))}
+C.prototype.getFirstConsistentlyInteractive=function(){var a=this;return new Promise(function(b){a.s=b;"complete"==document.readyState?F(a):window.addEventListener("load",function(){F(a)})})};function F(a){a.i=!0;var b=0<a.a.length?a.a[a.a.length-1].end:0,c=B(a.g,a.b);G(a,Math.max(c+5E3,b))}
+function G(a,b){!a.i||a.v>b||(clearTimeout(a.j),a.j=setTimeout(function(){var b=performance.timing.navigationStart,d=B(a.g,a.b),b=(window.a&&window.a.A?1E3*window.a.A().C-b:0)||performance.timing.domContentLoadedEventEnd-b;if(a.u)var f=a.u;else performance.timing.domContentLoadedEventEnd?(f=performance.timing,f=f.domContentLoadedEventEnd-f.navigationStart):f=null;var e=performance.now();null===f&&G(a,Math.max(d+5E3,e+1E3));var g=a.a;5E3>e-d?d=null:(d=g.length?g[g.length-1].end:b,d=5E3>e-d?null:Math.max(d,
+f));d&&(a.s(d),clearTimeout(a.j),a.i=!1,a.c&&a.c.disconnect(),a.h&&a.h.disconnect());G(a,performance.now()+1E3)},b-performance.now()),a.v=b)}
+function D(a){a.c=new PerformanceObserver(function(b){b=t(b.getEntries());for(var c=b.next();!c.done;c=b.next())if(c=c.value,"resource"===c.entryType&&(a.b.push({start:c.fetchStart,end:c.responseEnd}),G(a,B(a.g,a.b)+5E3)),"longtask"===c.entryType){var d=c.startTime+c.duration;a.a.push({start:c.startTime,end:d});G(a,d+5E3)}});a.c.observe({entryTypes:["longtask","resource"]})}C.prototype.m=function(a){this.f.set(a,performance.now())};C.prototype.l=function(a){this.f.delete(a)};
+C.prototype.B=function(){G(this,performance.now()+5E3)};h.Object.defineProperties(C.prototype,{g:{configurable:!0,enumerable:!0,get:function(){return[].concat(u(this.f.values()))}}});var H={getFirstConsistentlyInteractive:function(a){a=a?a:{};return"PerformanceLongTaskTiming"in window?(new C(a)).getFirstConsistentlyInteractive():Promise.resolve(null)}};
+"undefined"!=typeof module&&module.exports?module.exports=H:"function"===typeof define&&define.amd?define("ttiPolyfill",[],function(){return H}):window.ttiPolyfill=H;})();
+ var ttiFunc=function(p){p.getFirstConsistentlyInteractive().then(function(tti){if(typeof window.__track__==="function" && tti!==null){var ttiFinal=Math.round(tti);window.__track__('{"tti":'+ttiFinal+'}');if(window.newrelic!=null && typeof window.newrelic.addPageAction==="function"){window.newrelic.addPageAction('Time To Interactive',{value: ttiFinal});}}})};if(typeof require==="function"){require(['ttiPolyfill'],ttiFunc)}else if(window["ttiPolyfill"]){ttiFunc(window["ttiPolyfill"])};
+</script>
+
+        <script src="https://cdn-static.farfetch-contents.com/assets/vitorino/vitorino.min.js" defer onload="
+            if (
+                !window.Vitorino ||
+                typeof Vitorino.track !== 'function' ||
+                !window.universal_variable ||
+                !universal_variable.page ||
+                !universal_variable.user ||
+                !universal_variable.user.cookieId ||
+                'True' === 'False'
+            )
+            {
+                return;
+            }
+
+            var page;
+
+            switch (universal_variable.page.pageStep)
+            {
+                case 'ShippingAddress':
+                    page = Vitorino.PageTypes.SHIPPING;
+                    break;
+                case 'Review':
+                    page = Vitorino.PageTypes.CHECKOUT;
+                    break;
+                default:
+                    page = undefined;
+            }
+
+            Vitorino.track({
+                tenantId: 10000,
+                clientId: 10003,
+                customerId: window.universal_variable.user.userId,
+                correlationId: universal_variable.user.cookieId,
+                page: page,
+                origin: 'PORTAL_CHECKOUT'
+            });
+        "></script>
+
+
+<script type="text/javascript">
+    if (window.newrelic) {
+newrelic.setCustomAttribute('pageType', 'Confirmation');newrelic.setCustomAttribute('subfolder', '/br');newrelic.setCustomAttribute('subfolderCountryCode', 'BR');newrelic.setCustomAttribute('buildVersion', '2.0.22195.405');newrelic.setCustomAttribute('request.headers.x-tenant-id', '10000');newrelic.setCustomAttribute('modularizationEnabled', 'False');newrelic.setCustomAttribute('request.headers.x-is-mobile', 'False');    }
+</script>
+
+    
+<script>(window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"rua.upush":"false","rua.cpush":"false","rua.upre":"true","rua.cpre":"true","rua.uprl":"false","rua.cprl":"false","rua.cprf":"false","rua.trans":"SJ-42f881da-faac-4954-8980-5a96a8167fe4","rua.cook":"true","rua.ims":"false","rua.ufprl":"true","rua.cfprl":"false","rua.isuxp":"false","rua.texp":"norulematch"}]);</script>
+                              <script>!function(a){var e="https://s.go-mpulse.net/boomerang/",t="addEventListener";if("False"=="True")a.BOOMR_config=a.BOOMR_config||{},a.BOOMR_config.PageParams=a.BOOMR_config.PageParams||{},a.BOOMR_config.PageParams.pci=!0,e="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="D6TWA-SDX7Z-2UHCS-WFPNP-SUWDH",function(){function n(e){a.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!a.BOOMR||!a.BOOMR.version&&!a.BOOMR.snippetExecuted){a.BOOMR=a.BOOMR||{},a.BOOMR.snippetExecuted=!0;var i,_,o,r=document.createElement("iframe");if(a[t])a[t]("load",n,!1);else if(a.attachEvent)a.attachEvent("onload",n);r.src="javascript:void(0)",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="width:0;height:0;border:0;display:none;",o=document.getElementsByTagName("script")[0],o.parentNode.insertBefore(r,o);try{_=r.contentWindow.document}catch(O){i=document.domain,r.src="javascript:var d=document.open();d.domain='"+i+"';void(0);",_=r.contentWindow.document}_.open()._l=function(){var a=this.createElement("script");if(i)this.domain=i;a.id="boomr-if-as",a.src=e+"D6TWA-SDX7Z-2UHCS-WFPNP-SUWDH",BOOMR_lstart=(new Date).getTime(),this.body.appendChild(a)},_.write("<bo"+'dy onload="document._l();">'),_.close()}}(),"".length>0)if(a&&"performance"in a&&a.performance&&"function"==typeof a.performance.setResourceTimingBufferSize)a.performance.setResourceTimingBufferSize();!function(){if(BOOMR=a.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var e="true"=="true"?1:0,t="cookiepresent",n="f264q6accbaucywvpcoa-f-2005a3382-clientnsv4-s.akamaihd.net",i="false"=="true"?2:1,_={"ak.v":"32","ak.cp":"423924","ak.ai":parseInt("429125",10),"ak.ol":"0","ak.cr":34,"ak.ipv":4,"ak.proto":"h2","ak.rid":"26590880","ak.r":30826,"ak.a2":e,"ak.m":"farfetc","ak.n":"essl","ak.bpcip":"46.189.200.0","ak.cport":25718,"ak.gh":"2.16.65.61","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.csrc":"-","ak.acc":"","ak.t":"1658157212","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==IYqir3+6tkdy+WD+8OumkH+EpUByYm+wKIQO4kDU8OvAxHUSTtDUGbGLelzR2SE1ebXMY7Gs9XSRioHcoES582o9Q/IKPhBeWtj4hPUTDdf9e9cF7zZlZpsePybCdto/ZIIiEy9kbyAknhKlvb3l4i2vOGzjqXVxBDFb+D4zBAFd+VH5Ne1/PWxLukpyfz6+J93UTTUWfTpkalkhWZwfCGyEYtkbvdhiAjXJTwNa5nBgtRraNDIIP+z94wGO0kSZwb8wERGcqSJM9K9BPNz1K21w/6SDZESylk4Rqc+uHz3PicBulPe3xyM009s0Im1ZtvTKrd8DesSZdS8xqoJ+8/Fxzzqv9US0QYr6vcN5PjhndSyHQJeX1TI4m+aUIYttLT3IvMvn2TqEB28D17cNxv7j7bf30jt+bVm7GBrb964=","ak.pv":"54","ak.dpoabenc":"","ak.tf":i};if(""!==t)_["ak.ruds"]=t;var o={i:!1,av:function(e){var t="http.initiator";if(e&&(!e[t]||"spa_hard"===e[t]))_["ak.feo"]=void 0!==a.aFeoApplied?1:0,BOOMR.addVar(_)},rv:function(){var a=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(a)}};BOOMR.plugins.AK={akVars:_,akDNSPreFetchDomain:n,init:function(){if(!o.i){var a=BOOMR.subscribe;a("before_beacon",o.av,null,null),a("onbeacon",o.rv,null,null),o.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+    <body id="tstid_Confirmation" data-page="Confirmation" lang="pt" data-trk-endpoint="https://clickstream.farfetch.com/" class="loading basis rebrand" data-token-url='/v2/br/Login/GetAuthToken'>
+
+
+<!-- Google Tag Manager -->
+<noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-5VWCDN"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager -->        <svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+<symbol id="farfetchLogo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340.19 42.24"><path d="M56.74 18.14c-1.1-2.39-1.67-3.63-2.44-5.49-.71 1.86-.95 2.43-2.29 5.63l-2.62 6.44H59.7zM46.43 32.69l-3.68 8.12H32L50.72 1.38h9.07L78.5 40.81H67.91l-4-8.12zm58.85-14.22c2.19 0 3.1-.14 4-.62a4.68 4.68 0 002.34-4 4.72 4.72 0 00-2.34-4c-.86-.48-1.77-.58-4-.58H92.15v9.12zM92.15 40.81h-9.88V1.38H108c4.58 0 7.06.58 9.4 2a10.38 10.38 0 014.82 8.83c0 4.68-2.43 8.16-6.87 10 3.91 1.39 5.11 3.58 5.2 9.74.19 4.92.48 6.35 1.67 8.88h-10.88c-.72-2.2-.86-3.1-.76-6.88 0-5.72-1.58-7.49-6.64-7.49H92.15zM168.42 40.81V1.38h36.08v8h-26.2v7.4h23.15v8H178.3v8.12h26.2v8zM233.14 40.81h-9.88V9.35h-13.65v-8h37.13v8h-13.6zM295.14 25.39c-2.82 11.22-10.5 16.85-23.24 16.85-14.51 0-23.68-8.07-23.68-20.76 0-13 9.45-21.48 23.91-21.48 6.93 0 12.37 1.81 16.66 5.68a17.2 17.2 0 015.78 9.45h-10.65c-2-5-5.91-7.45-11.83-7.45-7.93 0-13.41 5.59-13.41 13.61 0 7.82 5.44 13.27 13.22 13.27 6.3 0 10.07-2.82 12.36-9.17zM330.32 1.38v15.37H310V1.38h-9.88v39.43H310V24.72h20.29v16.09h9.87V1.38zM0 40.81V1.38h34.6v8H9.88v7.4h22.67v8H9.88v16.03zM128.71 40.81V1.38h34.61v8h-24.73v7.4h22.72v8h-22.72v16.03z" /></svg>
+</symbol>
+<symbol id="farfetchMonogram">
+    <svg xmlns="http://www.w3.org/2000/svg" data-name="Ebene 1" viewBox="0 0 50 50"><path d="M50 21.35v-7.26H28.3c-6.34 0-9.87 3.82-9.87 9.34v4.66H9V17.91c0-7.13.7-10.56 8.78-10.56H50V0H13C4.87 0 0 5.39 0 13.3V50h9V35.35h9.43V50h9.05V35.35H50v-7.26H27.48v-2.44c0-3 .48-4.3 4.69-4.3z" /></svg>
+</symbol>
+        </svg>
+
+        <div class="loadingPlaceholder">
+            <span class="loadingPlaceholder__circle"></span>
+        </div>
+
+        <div class="wrapper wrapper-secure stickyProgressBar">
+
+
+<header class="secure-header" id="header" data-abtesting="">
+    <div class="container">
+        <div class="cc--header">
+            <div class="cc--secure">
+                <div class="cc--secure__icon">
+                    <span class="icon-lock glyphs pr10"></span>
+                    <span class="cc--secure__iconText small">Checkout seguro</span>
+                </div>
+                <div id="DigiCertClickID_ajg0KWDT" data-language="en" class=" cc--secure__logo "></div>
+            </div>
+                <div class="header--logo no-underline" itemscope itemtype="http://schema.org/Organization">
+                    <form data-tstid="Logo_Header_Farfetch"
+                          class="no-underline header--logo--link"
+                          id="header-form-logo-exit"
+                          method="post"
+                          action="https://www.farfetch.com/br/account/SharedLoginCallback?ffref=chk_hd_logo"
+                          data-trk='{"tid":"528","val":"returntocheckout"}'>
+
+                        <span id="farfetch__logo" class="js-form-submit">
+                            <svg id="svg-logo" class="header--logo__img" alt="Farfetch Logo">
+                                <use xlink:href="#farfetchLogo"></use>
+                            </svg>
+                        </span>
+                        <span class="sr--only">
+                            Ir para a p&#xE1;gina inicial da FARFETCH
+                        </span>
+                        <input name="token" type="hidden" class="js-cookie" />
+                        <input name="redirectUrl" type="hidden" class="js-redirect-url" />
+                    </form>
+                </div>
+
+            <div class="cc--contact">
+
+    <div class="need-help">
+        <a href="tel:&#x2B;55 11 3230 4141" class="need-help__title">Precisa de ajuda?</a>
+        <a href="tel:&#x2B;55 11 3230 4141" class="need-help__phone-link">
+            <span class="need-help__icon-phone icon-phone glyphs"></span><span class="need-help__phone-number" dir="ltr">&#x2B;55 11 3230 4141</span>
+        </a>
+    </div>
+            </div>
+        </div>
+    </div>
+
+<div id="mod-notifications" class="hide notifications" data-type="" data-tstid="Notifications">
+    <div class="notice  " >
+        <div class="container notice__container">
+            <div class="content col10">
+                <span class="glyphs content__icon icon-info-circle"></span>
+                <span class="content__message  js-message" data-tstid="Notification-message">
+                    
+                </span>
+            </div>
+            <div class="controls col2">
+                <div class="controls__close">
+                    <span class="glyphs icon-close js-close-notification"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="notifications hide" id="notice-timer" data-session-notify-time="2" data-type="warning">
+    <div class="notice">
+        <div class="container notice__container">
+            <div class="content col10">
+                <span class="glyphs content__icon icon-info-circle"></span>
+                <div class="content__message  js-message">
+                    <div id="js__messageExtend">
+                        Sua sess&#xE3;o no checkout terminar&#xE1; em menos de 2 minutos. Continue e salve todos os detalhes inseridos,
+                        <a href="#" id="js-timer-expand" class="bold underline"> Clique aqui</a>.
+                    </div>
+                    <div id="js__messageExtended" class="hide">
+                        <p>Estendemos sua sess&#xE3;o no checkout em mais 20 minutos.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="controls col2">
+                <div class="controls__close">
+                    <span class="glyphs icon-close" id="js-close-timer"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--This modal will show up when timer ends-->
+<section id="sessionExpired" class="modalDialog" role="dialog" asria-labelledby="modal-label">
+    <div class="modalDialog--wrapper">
+        <div class="modalDialog--inner">
+            <a href="#close" title="Close" class="button-white-circle modalDialog--close js-modalDialogClose" data-close="Close" data-dismiss="modal"></a>
+            <div class="modalDialog--content">
+                <div class="modalDialog--contentInfo">
+                    <p>Sorry, as you were inactive for a long while your checkout session has ended.</p>
+                    <p>Fa&#xE7;a login para concluir sua compra</p>
+                </div>
+                <div class="baseline col12 alpha omega sessionExpiredButton">
+                    <a href="https://www.farfetch.com/br/checkout/basket/GoToCheckout?ffref=chk_ft_absess" class="col4 col-xs-12 btn btn-reset btn-primary btn-arrow no-underline">
+                        <span>Login</span>
+
+<svg class="icon-arrow"><use xlink:href="#icon-arrow"></use></svg>                    </a>
+                </div>
+            </div>
+        </div>
+        <a href="#close" class="modalDialog--mask js-modalDialogClose">Fechar modal</a>
+    </div>
+</section>
+</header>
+<div class="header-overlay"></div>
+            <main>
+                <section>
+                    <div class="container" id="cc-container" data-session=" true">
+                        
+
+    <script type="text/javascript">
+        window.confirmation = window.confirmation || {};
+        window.confirmation.group1 = 21.5700;
+        window.confirmation.shouldCaptureConversionValue = false;
+    </script>
+
+
+<!-- SVG sprite placed inline directly after body tag with display: none -->
+<svg style="display:none;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <symbol id="icon-arrow" viewBox="0 0 24 24">
+        <path fill-rule="evenodd" d="M9 18.962l8.101-6.481L9 6v2.561l4.9 3.92L9 16.4z" />
+    </symbol>
+
+    <symbol id="icon-load" viewBox="0 0 24 24">
+        <path fill-rule="evenodd" d="M18.717 5.01a9 9 0 11-13.433 0L6.7 6.426a7 7 0 1010.6 0z" />
+    </symbol>
+
+    <symbol id="icon-check" viewBox="0 0 24 24">
+        <path fill-rule="evenodd" d="M9.707 14.293L17 7l1.414 1.414-8.707 8.707L6 13.414 7.414 12z" />
+    </symbol>
+
+    <symbol id="icon-secure" viewBox="0 0 24 24">
+        <path fill-rule="evenodd" d="M17 10V7A5 5 0 007 7v3.126c-1.725.444-3 2.01-3 3.874v8h16V10h-3zm-2 0V7a3 3 0 10-6 0v3h6zm-7 2h10v8H6v-6a2 2 0 012-2z" />
+    </symbol>
+
+    <symbol id="icon-lens" viewBox="0 0 24 24">
+        <path fill-rule="evenodd" d="M11 5a6 6 0 103.476 10.89l3.01 3.01 1.413-1.415-3.008-3.008A6 6 0 0011 5zm-4 6a4 4 0 118 0 4 4 0 01-8 0z" />
+    </symbol>
+
+    <symbol id="icon-exclamation" viewBox="0 0 24 24">
+        <path fill-rule="evenodd" d="M12 19a7 7 0 100-14 7 7 0 000 14zm0-1.75a5.25 5.25 0 110-10.5 5.25 5.25 0 010 10.5zm.875-4.375V8.5h-1.75v4.375h1.75zM12 15.5a.875.875 0 100-1.75.875.875 0 000 1.75z" />
+    </symbol>
+</svg>
+
+
+<div id="mod-confirmation" class="confirmation__wrapper">
+    <div class="header__section">
+        <div class="container__wrapper">
+            <div class="header__section__all_users ">
+
+                <h1 class="client_name">
+teste                </h1>
+
+                <p class="thanks_msg">obrigada por escolher fazer suas compras conosco</p>
+
+                <h2 class="order_reference">C&#xF3;digo do pedido <a href="https://www.farfetch.com/br/useraccount.aspx?h=orders#orderSX2DGT" id="orderCode">SX2DGT</a></h2>
+
+                <p class="email_sent_msg">Enviamos um email para <span>teste@farfetch.com</span> com todos os detalhes sobre o seu pedido.</p>
+
+
+
+<div class="covid19_delivery_banner js-covidBanner ">
+    <i class="glyphs icon-van covid19_delivery_banner__icon"></i>
+    <div class="covid19_delivery_banner__message">
+        <p class="covid19_delivery_banner__title">Estamos aqui para ajudar</p>
+        <div class="covid19_delivery_banner__content">
+            <p>Entrega segura at&#xE9; a sua porta&nbsp;&nbsp;</p>
+                <a href="https://www.farfetch.com/br/latest-coronavirus-information" target="_blank" rel="noopener" class="covid19_delivery_banner__link">Veja como</a>
+        </div>
+    </div>
+</div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="main__section">
+        <div class="container__wrapper">
+            <div class="main__section__order_details_block">
+
+<section class="productGroup js-productGroup" id="tstid_Review_Product_Group_Item" data-tstid="Review_Product_Group_Item">
+    <header class="productGroup__header">
+        <i id="tstid_Product_Group_Flag" data-tstid="Product_Group_Flag" class="flags flag-br"></i>
+        <div class="product_group_text">
+            <p>
+                Enviando&#xA0;de
+            </p>
+            <p id="tstid_Product_Group_BoutiqueName" data-tstid="Product_Group_BoutiqueName">
+                PACE BR,
+            </p>
+            <p id="tstid_Product_Group_CountryName" data-tstid="Product_Group_CountryName">
+                Brasil
+            </p>
+        </div>
+    </header>
+
+    <div class="productGroup__body">
+        <div class="productGroup__listItems">
+
+<div class="article" id="productItem">
+    <div class="article__image">
+        <picture>
+            <source media="(min-width: 480px)" srcset=https://cdn-images.farfetch-contents.com/17/80/12/67/17801267_38049623_190.jpg>
+            <img data-tstid="Product_Item_Thumbnail" src=https://cdn-images.farfetch-contents.com/17/80/12/67/17801267_38049623_120.jpg alt="Par de meias Hanko com bordado">
+        </picture>
+    </div>
+    <div class="article__detail">
+        <div class="article__detail__resume">
+            <h4 class="product_brand" data-tstid="Product_Item_Brand">PACE</h4>
+            <p class="product_item_name" data-tstid="Product_Item_FriendlyName">Par de meias Hanko com bordado</p>
+            <div class="product_item_info">
+                    <p data-tstid="Product_Item_Size_Label">Tamanho:</p>
+                    <p data-tstid="Product_Item_Size_Info">Tamanho &#xFA;nico</p>
+                <p data-tstid="Product_Item_Quantity_Label">Quantidade:</p>
+                <p data-tstid="Product_Item_Quantity_Number">1</p>
+            </div>
+
+
+        </div>
+        <div class="article__detail__price">
+                <p data-tstid="Product_Item_Price" class="product_item_price product_item_price--regular">R$ 70,00</p>
+
+                <p data-tstid="Product_Item_VatDdpDescription" class="vat_description">(Impostos inclusos)</p>
+        </div>
+    </div>
+</div>
+        </div>
+
+
+            <div class="productGroup__shippingOptions">
+<div id="tstid_Confirmation_Selected_Shipping_Option" data-tstid="Confirmation_Selected_Shipping_Option">
+    <p class="productGroup__shippingOptions__serviceName bold" id="tstid_Shipping_Option_ServiceName" data-tstid="Shipping_Option_ServiceName">Entrega padr&#xE3;o</p>
+    <p id="tstid_Shipping_Option_Description" data-tstid="Shipping_Option_Description">
+        Voc&#xEA; receber&#xE1; a compra entre 20 de jul. e 25 de jul.
+    </p>
+</div>
+            </div>
+    </div>
+</section>
+            </div>
+
+            <div class="main__section__total_price_block">
+                <div class="total_price">
+                    <p class="total_price__summary">Resumo</p>
+                    <div class="total_price_head">
+                        <div class="total_price_label_block">
+                            <p>Subtotal</p>
+                            <p>Entrega</p>
+                                <p>Cr&#xE9;dito</p>
+                        </div>
+                        <div class="total_price_price_block">
+                            <p id="tstid_Label_Confirmation_SubTotal" data-tstid="Label_Confirmation_SubTotal">R$ 70,00</p>
+                            <p id="tstid_Label_Confirmation_ShippingTotal" data-tstid="Label_Confirmation_ShippingTotal">R$ 24,99</p>
+                                <p class="box__minus" id="tstid_Label_Confirmation_TotalCredit" data-tstid="Label_Confirmation_TotalCredit">R$ 45,28</p>
+                        </div>
+                    </div>
+                    <div class="total_price_body">
+                        <div class="total_price_label_block">
+                            <p>Total</p>
+                        </div>
+                        <div class="total_price_price_block" data-tstid="Summary_GrandTotal_Confirmation">
+                                <p class="js-currency total_price_price_block__currency">BRL</p>
+                            <p id="tstid_Summary_GrandTotal_Confirmation" class="total_price_price_block__grandTotal">R$ 49,71</p>
+                                <span class="js-ddpLabel vat_description" data-tstid="Summary_DdpLabel_Confirmation">Impostos inclusos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main__section__climate_conscious_delivery_msg_block">
+                <div class="climate_conscious_delivery_msg_box">
+                    <i class="glyphs icon-eco-leaf climate_conscious_delivery_msg_icon"></i>
+                    <div>
+                        <p class="climate_conscious_delivery_msg_title">Entrega com impacto ambiental reduzido</p>
+                        <p>Financiamos projetos ambientais para compensar as emiss&#xF5;es de carbono de todas as nossas entregas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="payment_block">
+            <div class="container__wrapper delivery_payment_block">
+                <div class="main__section__delivery_payment_block">
+                    <div class="delivery__block">
+                        <h4 class="delivery__block__header">Endere&#xE7;o&#xA0;de entrega</h4>
+                        <div class="delivery__block__body">
+                            <address id="tstid_AddressInfo" data-tstid="AddressInfo">
+                                <p class="client_name">Ze boleto</p>
+                                <p class="client_address">
+                                    Avenida  Paulista<br>
+                                    1
+                                    S&#xE3;o Paulo, S&#xE3;o Paulo<br>
+                                    01310-200<br>
+                                    <span class="client_address__country">Brasil</span>
+                                </p>
+                            </address>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="container__wrapper delivery_payment_block">
+                    <div class="main__section__delivery_payment_block">
+                        <div class="delivery__block">
+                            <h4 class="delivery__block__header"> Endere&#xE7;o de cobran&#xE7;a</h4>
+                            <div class="delivery__block__body">
+                                    <p data-tstid="billing_eq_shipping" class="client_name">Endere&#xE7;o de cobran&#xE7;a igual ao de entrega</p>
+                                    <p class="client_address">Avenida  Paulista</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        <div class="container__wrapper delivery_payment_block">
+            <div class="main__section__delivery_payment_block">
+                <div class="payment__block">
+                    <h4 class="payment__block__header">Pagamento</h4>
+                    <div class="payment__block__body" data-tstid="Label_Confirmation_Payment_Method">
+                        
+
+
+<div data-tstid="LogoSelectPaymentMethod" data-paymentMethod-code="boleto" class=" js-logoSelectPaymentMethod">
+    <img alt="boleto" class="payment--boleto" src="https://cdn-static.farfetch-contents.com/assets/portal-checkout-web/v2-0-22195-405/Static/assets/images/payment-icons/payment_boleto.svg" />
+</div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        
+    </div>
+
+    <div class="confirmation__footer__section">
+
+
+            <section class="confirmation__footer__section__whatHapNext_block js_in-viewport" data-scroll-trk-val="happens_next_visible">
+                <div class="container__wrapper">
+
+<div class="whatHapNext__title mb20">
+	<h2>Pr&#xF3;ximos passos?</h2>
+</div>
+
+<div class="whatHapNext__content">
+	<div class="whatHapNext__step">
+        <i class="glyphs icon-clock"></i>
+        <p class="whatHapNext__stepText">Falta pouco. O seu pedido foi realizado e ser&#xE1; aprovado em at&#xE9; 48 horas.</p>
+	</div>
+
+	<div class="whatHapNext__step">
+        <i class="glyphs icon-heart"></i>
+        <p class="whatHapNext__stepText">Depois de aprovado, seu pedido &#xE9; cuidadosamente embalado com um toque especial, somente para voc&#xEA;.</p>
+	</div>
+
+	<div class="whatHapNext__step">
+        <i class="glyphs icon-box-progress"></i>
+        <p class="whatHapNext__stepText">Voc&#xEA; receber&#xE1; a confirma&#xE7;&#xE3;o de envio e a estimativa de entrega quando o pedido for enviado.</p>
+	</div>
+
+	<div class="whatHapNext__step">
+        <i class="glyphs icon-box-return"></i>
+        <p class="whatHapNext__stepText" data-tstid="returns-message-what-happens-next">Mudou de ideia? N&#xE3;o se preocupe! Voc&#xEA; tem 14 dias ou mais, dependendo de sua categoria, para devolver seu pedido gratuitamente. Em alguns casos, tamb&#xE9;m &#xE9; poss&#xED;vel cancel&#xE1;-lo antes do envio.</p>
+	</div>
+</div>
+                </div>
+            </section>
+
+
+        <section class="confirmation__footer__section getInTouch js_in-viewport">
+            <div class="container__wrapper">
+
+
+<h4 class="getInTouch__header">Deseja entrar em contato</h4>
+
+<ul class="getInTouch__content">
+    <li class="getInTouch__tile">
+        <i class="glyphs icon-mail"></i>
+        <p class="getInTouch__tileTitle">E-mail</p>
+        <p class="getInTouch__tileText"><a href="mailto:customerservice@farfetch.com">Clique aqui</a> para nos enviar um e-mail</p>
+    </li>
+    <li class="getInTouch__tile">
+        <i class="glyphs icon-phone"></i>
+        <p class="getInTouch__tileTitle">Telefone</p>
+        <p class="getInTouch__tileText"><a href="tel:&#x2B;55 11 3230 4141" class="getInTouch__tileTextPhone">&#x2B;55 11 3230 4141</a></p>
+    </li>
+    <li class="getInTouch__tile">
+        <i class="glyphs icon-faq"></i>
+        <p class="getInTouch__tileTitle">Perguntas frequentes</p>
+        <p class="getInTouch__tileText">Esclare&#xE7;a suas d&#xFA;vidas em nossa &#xE1;rea de <a href="https://www.farfetch.com/faqs">Perguntas frequentes</a></p>
+    </li>
+</ul>
+            </div>
+        </section>
+
+
+
+        <section class="confirmation__footer__section__continue_shopping js_in-viewport" data-scroll-trk-val="continue_shop_visible">
+                <form data-tstid="Label_Confirmation_GoBackToShopping"
+                      id="confirmation-label-goBackToShopping"
+                      method="post"
+                      action="https://www.farfetch.com/br/account/SharedLoginCallback?ffref=chk_cp_bsh"
+                      data-trk='{"tid":"528","val":"returntocheckout"}'>
+
+                    <a id="confirmation_goBackToShopping" class="js-form-submit confirmation__header__backToShopping__label">
+                        <button data-tstid="confirmation_goBackToShopping" class="btn btn-primary">
+                            <span class="visible-md visible-sm visible-xl">
+                                Continuar comprando
+                            </span>
+                        </button>
+                    </a>
+                    <input name="token" type="hidden" class="js-cookie" />
+                    <input name="redirectUrl" type="hidden" class="js-redirect-url" />
+                </form>
+        </section>
+
+    </div>
+</div>
+
+                    </div>
+                </section>
+            </main>
+
+
+<footer>
+    <section class="footer">
+        <div class="footer__section container">
+            <div class="footer__section__authentication">
+                    <span data-tstid="Label_UserName_Footer">N&#xE3;o &#xE9; teste?</span>
+                    <span data-tstid="Label_NotMeSignOut">
+                        <form class="no-underline"
+                              id="sign-out-form"
+                              method="POST"
+                              action="https://www.farfetch.com/br/account/SharedLogoutCallback?ffref=chk_ft_sgnt"
+                              data-logout-url="/v2/br/Login/SignOut">
+                            <input name="token" type="hidden" class="js-logout-shared-token"/>
+                            <button class="button-as-link js-form-submit">
+                                Fa&#xE7;a logout
+                            </button>
+                        </form>
+                    </span>
+            </div>
+            <div class="footer__section__needHelpCurrency">
+                <div class="flags">
+                    <span class="flags flag-br">
+                        <span class="subfolder">BR</span>/<span class="currency">BRL (R$)</span>
+                    </span>
+                </div>
+
+    <div class="need-help">
+        <a href="tel:&#x2B;55 11 3230 4141" class="need-help__title">Precisa de ajuda?</a>
+        <a href="tel:&#x2B;55 11 3230 4141" class="need-help__phone-link">
+            <span class="need-help__icon-phone icon-phone glyphs"></span><span class="need-help__phone-number" dir="ltr">&#x2B;55 11 3230 4141</span>
+        </a>
+    </div>
+            </div>
+        </div>
+        <div class="footer__section container">
+        </div>
+    </section>
+</footer>
+        </div>
+
+    
+    
+    <script type="text/javascript" nonce="e386483b2c12ae5cfd44e0fad7b9113f" src="/JKdDmr_KIX0VJ/qSX/taojC7RD7cw/awi1rQwt9zk9/JGkkPDcC/cgcBC/QUCcVs"></script></body>
+</html>
