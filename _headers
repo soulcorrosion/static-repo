@@ -46,3 +46,7 @@
 /site_defer/js/*
    # Headers for that path:
    Cache-Control: public, max-age=360000 
+
+/head/*
+   # Headers for that path:
+   Cache-Control: public, max-age=360000 
