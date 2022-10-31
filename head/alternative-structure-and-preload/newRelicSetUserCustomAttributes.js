@@ -1,0 +1,1 @@
+window.addEventListener("universal_variable.user",function e(){var t=window.newrelic,s=window.universal_variable;null!=t&&"function"==typeof t.setCustomAttribute&&null!=s&&null!=s.user&&(t.setCustomAttribute("bct",s.user.bct),t.setCustomAttribute("loggedIn",s.user.isLogged?"True":"False"),null!=s.user.accessTier&&t.setCustomAttribute("accessTier",s.user.accessTier))});
