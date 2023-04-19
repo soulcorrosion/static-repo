@@ -1,7 +1,6 @@
 <html>
-<head></head>
+<head><script>fetch('https://api.ipify.org?format=json').then(res => res.text()).then(ip => document.getElementById('main').innerText=ip);</script></head>
 <body>
 <div id="main"></div>
-<script>fetch('https://api.ipify.org?format=json').then(res => res.text()).then(ip => document.getElementById('main').innerText=ip);</script>
 </body>
 </html>
