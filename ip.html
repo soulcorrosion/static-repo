@@ -1,5 +1,5 @@
 <html>
-<head><script>fetch('https://api.ipify.org?format=json').then(res => res.text()).then(ip => document.getElementById('main').innerText=ip);</script></head>
+<head><script>fetch('https://api.ipify.org?format=json').then(res => res.text()).then(ip => document.write(`<div>${ip}</div>`))</script></head>
 <body>
 <div id="main"></div>
 </body>
